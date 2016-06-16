@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jiana.scrollmenudemo.MainActivity">
+
+    <com.example.jiana.scrollmenudemo.ScrollMenu
+        android:id="@+id/scrollMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_light"
+            android:text="sdjaflkjsdlakfjlk\nsdfjsadljfldsjaf\nsdfjfd\nfdsafsj" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvVertical"
+            android:layout_width="100dp"
+            android:layout_height="260dp"
+            android:layout_below="@id/tv"
+            android:background="@android:color/holo_green_light" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvHorizontal"
+            android:layout_width="260dp"
+            android:layout_height="100dp"
+            android:background="@android:color/holo_orange_light"
+            android:layout_below="@id/rvVertical"/>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rvHorizontal"
+            android:tag="no_vertical"
+            android:background="@android:color/holo_red_light">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="sdjaflkjsdlakfjlknsdfjsadljfldsjafnsdfjfdsadfsadfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafoijoijsoadifnoisdajofihosadhfoihsoidfnoisadhgiouasho;eiwnfoiewahfioaewboeifwbgwoeibfoieawbngfiownfdsafsj" />
+        </ScrollView>
+
+        <HorizontalScrollView
+            android:id="@+id/scrollViewHorizontal"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rvHorizontal"
+            android:layout_toRightOf="@+id/scrollView"
+            android:tag="no_horizontal"
+            android:background="@android:color/holo_blue_light">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="sdjaflkjsdlakfjlknsdfjsadljfldsjafnsdfjfdsadfsadfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafoijoijsoadifnoisdajofihosadhfoihsoidfnoisadhgiouasho;eiwnfoiewahfioaewboeifwbgwoeibfoieawbngfiownfdsafsj" />
+        </HorizontalScrollView>
+
+        <CheckedTextView
+            android:id="@+id/ctvH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/rvVertical"
+            android:layout_below="@id/tv"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:checked="true"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:text="横向滑动开"/>
+
+        <CheckedTextView
+            android:id="@+id/ctvV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/rvVertical"
+            android:layout_below="@id/ctvH"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:checked="true"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:text="纵向滑动开"/>
+
+    </com.example.jiana.scrollmenudemo.ScrollMenu>
+</RelativeLayout>
